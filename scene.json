@@ -1,0 +1,154 @@
+{
+	"camera" : 
+	{
+		"center" : "0.00000 0.00000 -1.00000",
+		"eye" : "0.00000 0.00000 0.00000",
+		"up" : "0.00000 1.00000 0.00000"
+	},
+	"general" : 
+	{
+		"ambientcolor" : "0.30000 0.30000 0.30000",
+		"bloom" : true,
+		"bloomhdrfeather" : 0.10000000149011612,
+		"bloomhdrscatter" : 1.6189999580383301,
+		"bloomhdrstrength" : 1.1299999952316284,
+		"bloomhdrthreshold" : 1.0,
+		"bloomstrength" : 0.6600000262260437,
+		"bloomthreshold" : 0.8399999737739563,
+		"camerafade" : true,
+		"cameraparallax" : true,
+		"cameraparallaxamount" : 0.57999998331069946,
+		"cameraparallaxdelay" : 0.0,
+		"cameraparallaxmouseinfluence" : 0.0099999997764825821,
+		"camerapreview" : true,
+		"camerashake" : false,
+		"camerashakeamplitude" : 0.4699999988079071,
+		"camerashakeroughness" : 0.41999998688697815,
+		"camerashakespeed" : 0.30000001192092896,
+		"clearcolor" : "0.70196 0.70196 0.70196",
+		"clearenabled" : true,
+		"farz" : 10000.0,
+		"fov" : 50.0,
+		"hdr" : true,
+		"nearz" : 0.0099999997764825821,
+		"orthogonalprojection" : 
+		{
+			"height" : 2268,
+			"width" : 3984
+		},
+		"skylightcolor" : "0.30000 0.30000 0.30000",
+		"zoom" : 1.0
+	},
+	"objects" : 
+	[
+		{
+			"alignment" : "center",
+			"alpha" : 1.0,
+			"angles" : "0.00000 0.00000 0.00000",
+			"brightness" : 1.0,
+			"color" : "1.00000 1.00000 1.00000",
+			"colorBlendMode" : 2,
+			"copybackground" : true,
+			"effects" : 
+			[
+				{
+					"file" : "effects/pulse/effect.json",
+					"id" : 68,
+					"name" : "",
+					"passes" : 
+					[
+						{
+							"combos" : 
+							{
+								"AUDIOPROCESSING" : 3,
+								"BLENDMODE" : 4,
+								"PULSEALPHA" : 0
+							},
+							"constantshadervalues" : 
+							{
+								"amount" : 0.23000000000000001,
+								"audioamount" : 
+								{
+									"animation" : 
+									{
+										"options" : 
+										{
+											"fps" : 14.5,
+											"length" : 29,
+											"mode" : "loop"
+										},
+										"previewvalue" : 1.4299999475479126
+									},
+									"value" : 1.4299999475479126
+								},
+								"audiobounds" : "0.00000 1.00000",
+								"audioexponent" : 2.9300000000000002,
+								"bounds" : "0 1",
+								"frequencymax" : 12,
+								"frequencymin" : 0,
+								"tinthigh" : "0.8823529411764706 0.8823529411764706 0.8156862745098039",
+								"tintlow" : "0.8666666666666667 0.8666666666666667 0.8431372549019608"
+							},
+							"id" : 69
+						}
+					],
+					"visible" : false
+				}
+			],
+			"id" : 13,
+			"image" : "models/posetest.json",
+			"ledsource" : false,
+			"locktransforms" : false,
+			"name" : "posetest",
+			"origin" : "2005.93835 1130.01758 0.00000",
+			"parallaxDepth" : "1.00000 1.00000",
+			"perspective" : true,
+			"scale" : "1.01748 1.01748 1.01748",
+			"size" : "3984.00000 2268.00000",
+			"solid" : true,
+			"visible" : true
+		},
+		{
+			"angles" : "0.00000 -0.00000 0.01504",
+			"id" : 47,
+			"instanceoverride" : 
+			{
+				"brightness" : 2.380000114440918,
+				"colorn" : "0.91765 0.08235 0.08235",
+				"count" : 0.87999999523162842,
+				"id" : 49,
+				"rate" : 
+				{
+					"script" : "'use strict';\nexport let __workshopId = '2111504995';\n\n/**\n * Configure these to control smoothing and the frequency.\n */\nlet frequencyResolution = 16; // Must be 16, 32 or 64 per channel.\nlet sourceFrequency = 0; // Must be smaller than frequencyResolution. Lower values for bass, higher for treble.\nlet smoothingRate = 16;\nlet minimumValue = 0.5;\nlet maximumValue = 3;\n\n/**\n * This creates a permanent link to the audio response data.\n */\nlet audioBuffer = engine.registerAudioBuffers(frequencyResolution);\nvar smoothValue = 0;\nvar initialValue;\nconst valueDelta = maximumValue - minimumValue;\n\n/**\n */\nexport function update() {\n\tlet audioDelta = audioBuffer.average[sourceFrequency] - smoothValue;\n\t\n\tsmoothValue += audioDelta * engine.frametime * smoothingRate;\n\tsmoothValue = Math.min(1.0, smoothValue);\n\n\treturn initialValue * (smoothValue * valueDelta + minimumValue);\n}\n\n/**\n */\nexport function init(value) {\n\tinitialValue = value;\n}\n\n",
+					"value" : 1.0
+				},
+				"size" : 1.440000057220459,
+				"speed" : 1.2100000381469727
+			},
+			"locktransforms" : false,
+			"name" : "Perspective  (runscript)",
+			"origin" : "2251.91650 1464.01379 0.00000",
+			"parallaxDepth" : "1.00000 1.00000",
+			"particle" : "particles/workshop/2111504995/presets/snowperspective.json",
+			"scale" : "1.55341 1.29805 1.00000",
+			"visible" : true
+		},
+		{
+			"angles" : "0.00000 0.00000 0.00000",
+			"id" : 88,
+			"locktransforms" : false,
+			"maxtime" : 5.0,
+			"mintime" : 1.0,
+			"muteineditor" : false,
+			"name" : "yt1s.com - Galshi Revolution  Wolves No copyright.mp3",
+			"origin" : "0.00000 0.00000 0.00000",
+			"parallaxDepth" : "1.00000 1.00000",
+			"playbackmode" : "loop",
+			"scale" : "1.00000 1.00000 1.00000",
+			"sound" : [ "sounds/yt1s.com - Galshi Revolution  Wolves No copyright.mp3" ],
+			"startsilent" : false,
+			"volume" : 0.5
+		}
+	],
+	"version" : 1
+}
