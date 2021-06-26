@@ -1,7 +1,11 @@
+Guide d'installation / Installation Guide :
+
 FR :
-Pour installer le wallpaper rendez vous dans "C:\Program Files (x86)\Steam\steamapps\common\wallpaper_engine\projects\myprojects"
-Créer y un dossier est déposé les fichier.
+Télécharger le projet au format ".zip".
+Puis rendez vous dans "C:\Program Files (x86)\Steam\steamapps\common\wallpaper_engine\projects\myprojects"
+Créer y un dossier est décompreser y les fichier.
 
 EN :
-To install the wallpaper go to "C:\Program Files (x86)\Steam\steamapps\common\wallpaper_engine\projects\myprojects"
-Create a folder there and deposit the files.
+Download the project in ".zip" format.
+Then go to "C:\Program Files (x86)\Steam\steamapps\common\wallpaper_engine\projects"
+Create a folder and unzip the files.
